@@ -9,7 +9,7 @@ public class Main {
             System.out.println("Testar automatiserade builds med Docker. (" + counter++ + ")");
 
             try {
-                Thread.sleep(7000);
+                Thread.sleep(7500);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
