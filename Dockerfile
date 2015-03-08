@@ -17,16 +17,11 @@ RUN \
   rm -rf /var/lib/apt/lists/* && \
   rm -rf /var/cache/oracle-jdk8-installer
 
-
 # Define working directory.
 WORKDIR /src/se/joheli
 
 # Define commonly used JAVA_HOME variable
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 
-COPY . /src/se/joheli
-RUN javac Main.java
-CMD ["java", "Main"]
-
 # Define default command.
-#CMD ["bash"]
+CMD ["bash"]
