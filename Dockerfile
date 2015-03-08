@@ -17,10 +17,11 @@ RUN \
   rm -rf /var/lib/apt/lists/* && \
   rm -rf /var/cache/oracle-jdk8-installer
 
-COPY . /src/se/joheli
+# Copy Main.java to java_sources
+COPY /src/se/joheli /java_sources
 
 # Define working directory.
-WORKDIR /src/se/joheli
+WORKDIR /java_sources
 
 # Define commonly used JAVA_HOME variable
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
