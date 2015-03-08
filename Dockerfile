@@ -19,10 +19,13 @@ RUN \
 
 
 # Define working directory.
-WORKDIR /data
+WORKDIR /src/se/joheli
 
 # Define commonly used JAVA_HOME variable
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 
+RUN javac Main.java
+CMD ["java", "Main"]
+
 # Define default command.
-CMD ["bash"]
+#CMD ["bash"]
