@@ -24,6 +24,7 @@ WORKDIR /src/se/joheli
 # Define commonly used JAVA_HOME variable
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 
+COPY . /src/se/joheli
 RUN javac Main.java
 CMD ["java", "Main"]
 
