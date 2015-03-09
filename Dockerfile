@@ -26,7 +26,6 @@ COPY /src/se/joheli /java_sources
 # Define commonly used JAVA_HOME variable
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 
-# Define default command.
-#CMD ["bash"]
-CMD ["javac", "Main.java"]
-CMD ["java", "Main"]
+# Define default commands.
+CMD ["javac", "-d .", "Main.java"]
+CMD ["java", "se.joheli.Main"]
