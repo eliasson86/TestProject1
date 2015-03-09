@@ -14,18 +14,22 @@ RUN \
   add-apt-repository -y ppa:webupd8team/java && \
   apt-get update && \
   apt-get install -y oracle-java8-installer && \
+  apt-get install maven && \
   rm -rf /var/lib/apt/lists/* && \
   rm -rf /var/cache/oracle-jdk8-installer
 
+
 # Define working directory.
-WORKDIR /java_sources
+WORKDIR /github_clone
 
 # Copy Main.java to java_sources
-COPY /src/se/joheli /java_sources
+COPY . /github_clone
 
 # Define commonly used JAVA_HOME variable
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 
 # Define default commands.
-CMD ["javac", "-d .", "Main.java"]
-CMD ["java", "se.joheli.Main"]
+CMD ["mvn", "version"]
+CMD ["mvn", "clean", "install"]
+#CMD ["javac", "-d .", "Main.java"]
+#CMD ["java", "se.joheli.Main"]
